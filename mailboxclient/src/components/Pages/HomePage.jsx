@@ -2,7 +2,7 @@ import React from 'react'
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <h1>Welcome to Mail Box Client</h1>
   )
 }
 

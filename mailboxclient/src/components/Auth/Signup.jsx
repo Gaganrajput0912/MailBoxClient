@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, {  useState } from "react";
 // import { Toast } from "react-bootstrap";
+import { authActions } from "../../store/AuthSlicer";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 // import { toast } from "react-toastify";
@@ -37,7 +38,7 @@ const Signup = () => {
       );
 
       alert("User created successfully");
-    //   dispatch(authActions.loginPage());
+      dispatch(authActions.loginPage());
     } catch (e) {
       alert(e.response.data.error.message);
     }
@@ -92,14 +93,15 @@ const Signup = () => {
           className=" btn btn-secondary"
           value="CREATE ACCOUNT"
         />
-        <button
-          id="btn"
-          className=" m-3 text-primary border-0"
-        //   onClick={() => dispatch(authActions.loginPage())}
-        >
-          Already having account?
-        </button>
-      </form>
+        </form>
+         <button
+        id="btn"
+        className=" m-3 text-primary border-0"
+          onClick={() => dispatch(authActions.loginPage())}
+      >
+        Already having account?
+      </button>
+      
     </div>
   );
 };
