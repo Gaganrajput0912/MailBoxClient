@@ -4,14 +4,14 @@ import Signup from '../Auth/Signup';
 import HomePage from '../Pages/HomePage'
 import { useSelector } from 'react-redux';
 import Login from '../Auth/Login';
-
+import SendMail from '../Pages/SendMail';
 const AllRoutes = () => {
     const {isLogin,isLoginPage} = useSelector(state => state.auth)
  console.log(isLoginPage)
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      
+      <Route path="/sendmail" element={<SendMail />} />
       <Route path="/auth" element={!isLoginPage ? <Signup /> : <Login />} />
     </Routes>
   );

@@ -32,6 +32,7 @@ const Login = () => {
         }
       );
 
+      localStorage.setItem('userEmail', userData.email)
       alert("User Login successfully");
       dispatch(authActions.login(res.data.idToken));
       navigate("/");
