@@ -38,9 +38,9 @@ const SendMail = () => {
     console.log(res);
 
     alert("Mail sent!");
-    setUserEmail("");
-    setSubject("");
-    setEditorState("");
+    // setUserEmail("");
+    // setSubject("");
+    // setEditorState("");
     setErrors({});
     //   window.location.href = "/inbox";
   };
