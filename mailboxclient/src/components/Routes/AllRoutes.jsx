@@ -2,6 +2,8 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Signup from '../Auth/Signup';
 import HomePage from '../Pages/HomePage'
+
+import Mail from '../Pages/Mail';
 import { useSelector } from 'react-redux';
 import Login from '../Auth/Login';
 import SendMail from '../Pages/SendMail';
@@ -13,6 +15,7 @@ const AllRoutes = () => {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/inbox" element={<Inbox />} />
+      <Route path="/inbox/:id" element={<Mail/>} />
       <Route path="/sendmail" element={<SendMail />} />
       <Route path="/auth" element={!isLoginPage ? <Signup /> : <Login />} />
     </Routes>
