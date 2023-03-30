@@ -17,6 +17,11 @@ const SendMail = () => {
       { mail: editorState, subject: subject, senderMail: senderMail }
     );
     console.log(res);
+    alert("Mail sent!");
+  setUserEmail("");
+  setSubject("");
+  setEditorState("");
+//   window.location.href = "/inbox"; 
   };
   return (
     <div>
@@ -35,7 +40,7 @@ const SendMail = () => {
         editorStyle={{ border: "1px solid", padding: "15px" }}
         wrapperStyle={{ padding: "20px" }}
         onEditorStateChange={(e) => console.log(e)}
-        onChange={(e) => setEditorState(e.blocks[0].text)}
+        onChange={(e) => setEditorState(e.blocks[0].text)} required
       />
       <button className="btn btn-primary" onClick={handleSubmit}>
         SEND MAIL

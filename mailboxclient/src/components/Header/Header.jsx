@@ -19,11 +19,11 @@ const Header = () => {
       alert("Please log in to send mail.");
       navigate("/auth");
     } else {
-      navigate("/sendmail");
+      navigate("/inbox");
     }
   };
 
-  const shouldShowSendMailButton = location.pathname !== "/sendmail" && isLogin;
+  // const shouldShowSendMailButton = location.pathname !== "/sendmail" && isLogin;
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -31,11 +31,12 @@ const Header = () => {
         <Link className="navbar-brand" to="/">
           Mail Box Client
         </Link>
-        {shouldShowSendMailButton && (
+        {(
           <button className="btn btn-link" onClick={handleSendMail}>
-            SEND MAIL
+            OPEN MAIL
           </button>
         )}
+        
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             {!isLogin && (
